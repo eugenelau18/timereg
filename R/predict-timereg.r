@@ -117,7 +117,7 @@ predict.comprisk <- function(object,...) predict.timereg(object,...)
 #' Springer.
 #' @keywords survival
 #' @examples
-#' 
+#' library(timereg)
 #' data(bmt); 
 #' 
 #' ## competing risks 
@@ -150,6 +150,9 @@ predict.comprisk <- function(object,...) predict.timereg(object,...)
 #' par(mfrow=c(2,2))
 #' plot(pout,multiple=1,se=0,uniform=0,col=1:2,lty=1:2)
 #' plot(pout,multiple=0,se=1,uniform=1,col=1:2)
+#' 
+#' ## predictions directly from cumulative baselines, not enforcing monotonicity  
+#' plot(pout,multiple=1,se=0,uniform=0,col=1:2,lty=1:2,monotone=0)
 #' 
 #' out<-aalen(Surv(time,status==9)~const(age)+const(sex)+
 #' const(diabetes)+chf+vf,
